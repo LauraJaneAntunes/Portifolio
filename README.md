@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💻 Meu Portfólio Pessoal
 
-## Getting Started
+Bem-vindo ao meu portfólio pessoal!
 
-First, run the development server:
+Aqui você encontrará alguns dos meus projetos em **Front-End Web e Mobile**. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este projeto foi desenvolvido em **React** com animações utilizando **Framer Motion**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 [Acesse meu portfólio aqui](https://laurajaneantunes.netlify.app)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧑‍💻 Sobre Mim
 
-## Learn More
+Sou **Laura Jane Antunes**, apaixonada por tecnologia e focada em criar experiências digitais incríveis utilizando **React** e **React Native**. Estou sempre em busca de aprendizado contínuo para desenvolver soluções eficientes e inovadoras.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Projetos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🌟 [Landing Page](https://ljainiciacaocientifica.netlify.app/)
 
-## Deploy on Vercel
+* **Descrição:** Aplicação em HTML + CSS + JavaScript para o projeto de Iniciação Científica.
+* 📌 [Código Fonte](https://github.com/LauraJaneAntunes/IC)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📅 [Eventos Express](https://eventos-express.netlify.app/)
+
+* **Descrição:** Front-End do projeto desenvolvido para estágio em parceria com o curso de Eventos da Fatec de Itu.
+* 📌 [Código Fonte](https://github.com/Evento-Express/Plataforma-Eventos-Express)
+
+
+### 🌱 [Plataforma Ecosrev](https://ecos-rev-pi.vercel.app/)
+
+* **Descrição:** Front-End do projeto desenvolvido em React para o Projeto Integrador do 2º semestre de 2024.
+* 📌 [Código Fonte](https://github.com/LauraJaneAntunes/EcosRev-PI4sem)
+
+
+### 📱 [App Mobile Ecosrev](https://lpappmobileecosrev.netlify.app/)
+
+* **Descrição:** Front-End do projeto **em desenvolvimento** para o Projeto Integrador do 1º semestre de 2025.
+* 📌 [Código Fonte](https://github.com/LauraJaneAntunes/appMobile)
+
+
+## 📬 Contato
+
+Segue meu linkdin:
+
+https://www.linkedin.com/in/laura-jane-antunes-904b1267/
+
+
+Feito com 💙 por **Laura Jane Antunes**

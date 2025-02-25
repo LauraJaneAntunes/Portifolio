@@ -1,100 +1,96 @@
-import Image from "next/image";
+'use client'
+import { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [projects] = useState([
+    {
+      title: "Landing Page",
+      description: "Aplicação em HTML + CSS + JavaScript para o projeto de Iniciação Científica.",
+      demoLink: "https://ljainiciacaocientifica.netlify.app/",
+      codeLink: "https://github.com/LauraJaneAntunes/IC",
+    },
+    {
+      title: "Eventos Express",
+      description: "Front-End do Projeto desenvolvido para estágio em parceria com o curso de Eventos da Fatec de Itu.",
+      demoLink: "https://eventos-express.netlify.app/",
+      codeLink: "https://github.com/Evento-Express/Plataforma-Eventos-Express",
+    },
+    {
+      title: "Plataforma Ecosrev",
+      description: "Front-End do Projeto em desenvolvido em React para o Projeto Integrador do 2º semestre de 2024.",
+      demoLink: "https://ecos-rev-pi.vercel.app/",
+      codeLink: "https://github.com/LauraJaneAntunes/EcosRev-PI4sem",
+    },
+    {
+      title: "App Mobile Ecosrev",
+      description: "Front-End do Projeto **em desenvolvimento** para o Projeto Integrador do 1º semestre de 2025.",
+      demoLink: "https://lpappmobileecosrev.netlify.app/",
+      codeLink: "https://github.com/LauraJaneAntunes/appMobile",
+    },
+  ]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+  return (
+    <div className="min-h-screen bg-gray-100 text-gray-800">
+      {/* Header */}
+      <header className="p-6 bg-black text-white text-center">
+        <h1 className="text-4xl font-bold">Laura Jane Antunes</h1>
+        <p className="mt-2">Desenvolvedor Front-End Web e Mobile</p>
+      </header>
+
+      {/* Sobre Mim */}
+      <section className="p-8 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-4">Sobre Mim</h2>
+        <p>
+          Apaixonado por tecnologia, focado em criar experiências digitais
+          usando React e React Native. Em constante aprendizado e aprimoramento
+          para desenvolver soluções eficientes.
+        </p>
+      </section>
+
+      {/* Projetos */}
+      <section className="p-8 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-6">Projetos</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white p-6 rounded-2xl shadow-md"
+            >
+              <h3 className="text-2xl font-semibold">{project.title}</h3>
+              <p className="mt-2 mb-4">{project.description}</p>
+              <div className="flex gap-4">
+                <a
+                  href={project.demoLink}
+                  className="text-blue-600 hover:underline"
+                >
+                  Ver Projeto
+                </a>
+                <a
+                  href={project.codeLink}
+                  className="text-blue-600 hover:underline"
+                >
+                  Código Fonte
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contato */}
+      <footer className="p-8 bg-black text-white text-center">
+        <h2 className="text-3xl font-semibold mb-4">Contato</h2>
+        <div className="flex justify-center gap-8 text-3xl">
+          <a href="#" className="hover:text-gray-300">
+            <FaGithub />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="#" className="hover:text-gray-300">
+            <FaLinkedin />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
   );
