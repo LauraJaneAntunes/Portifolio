@@ -84,10 +84,10 @@ export default function Home() {
       <footer className="p-8 bg-black text-white text-center">
         <h2 className="text-3xl font-semibold mb-4">Contato</h2>
         <div className="flex justify-center gap-8 text-3xl">
-          <a href="#" className="hover:text-gray-300">
+          <a href="https://github.com/LauraJaneAntunes/" className="hover:text-gray-300">
             <FaGithub />
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a href="https://www.linkedin.com/in/laura-jane-antunes-904b1267/" className="hover:text-gray-300">
             <FaLinkedin />
           </a>
         </div>
