@@ -29,11 +29,11 @@ export default function Academic() {
           <li>📅 Organização e Controle de Agenda de Médicos Veterinários</li>
         </ul>
 
-        <div className="mt-6">
+{/*         <div className="mt-6">
           <Link href="/" className="text-blue-600 hover:underline">
             ← Voltar para a Página Inicial
           </Link>
-        </div>
+        </div> */}
       </section>
     </div>
   );
