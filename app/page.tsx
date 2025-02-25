@@ -47,6 +47,11 @@ export default function Home() {
           usando React e React Native. Em constante aprendizado e aprimoramento
           para desenvolver soluções eficientes.
         </p>
+        <div className="mt-4">
+          <Link href="/academic" className="text-blue-600 hover:underline">
+            Ver Formação Acadêmica
+          </Link>
+        </div>
       </section>
 
       {/* Projetos */}
