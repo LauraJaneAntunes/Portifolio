@@ -1,102 +1,88 @@
-'use client'
-import { useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+'use client';
+
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Layout from './components/layout';
+
+const typingTexts = [
+  "Sou uma estudante de programação",
+  "Sou front-end"
+];
 
 export default function Home() {
-  const [projects] = useState([
-    {
-      title: "Landing Page",
-      description: "Aplicação em HTML + CSS + JavaScript para o projeto de Iniciação Científica.",
-      demoLink: "https://ljainiciacaocientifica.netlify.app/",
-      codeLink: "https://github.com/LauraJaneAntunes/IC",
-    },
-    {
-      title: "Eventos Express",
-      description: "Front-End do Projeto desenvolvido para estágio em parceria com o curso de Eventos da Fatec de Itu.",
-      demoLink: "https://eventos-express.netlify.app/",
-      codeLink: "https://github.com/Evento-Express/Plataforma-Eventos-Express",
-    },
-    {
-      title: "Plataforma Ecosrev",
-      description: "Front-End do Projeto em desenvolvido em React para o Projeto Integrador do 2º semestre de 2024.",
-      demoLink: "https://ecos-rev-pi.vercel.app/",
-      codeLink: "https://github.com/LauraJaneAntunes/EcosRev-PI4sem",
-    },
-    {
-      title: "App Mobile Ecosrev",
-      description: "Front-End do Projeto **em desenvolvimento** para o Projeto Integrador do 1º semestre de 2025.",
-      demoLink: "https://lpappmobileecosrev.netlify.app/",
-      codeLink: "https://github.com/LauraJaneAntunes/appMobile",
-    },
-  ]);
+  const [textIndex, setTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = typingTexts[textIndex];
+    const typingSpeed = isDeleting ? 50 : 150;
+
+    const timer = setTimeout(() => {
+      setDisplayText((prev) =>
+        isDeleting ? currentText.substring(0, prev.length - 1) : currentText.substring(0, prev.length + 1)
+      );
+
+      if (!isDeleting && displayText === currentText) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && displayText === "") {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % typingTexts.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, textIndex]);
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      {/* Header */}
-      <header className="p-6 bg-black text-white text-center">
-        <h1 className="text-4xl font-bold">Laura Jane Antunes</h1>
-        <p className="mt-2">Desenvolvedor Front-End Web e Mobile</p>
-      </header>
+    <Layout>
+      {/* Hero Section */}
+      <section className="p-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        {/* Foto */}
+        <div className="w-full md:w-1/3 flex justify-center">
+          <img
+            src="/images/me.jpg"
+            alt="Laura Jane Antunes"
+            className="rounded-full w-64 h-64 md:w-full md:h-auto shadow-lg border-4"
+            style={{
+              boxShadow: '0 0 15px blueviolet',
+              borderColor: 'blueviolet',
+              aspectRatio: '1 / 1',
+              objectFit: 'cover'
+            }}
+          />
+        </div>
 
-      {/* Sobre Mim */}
-      <section className="p-8 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4">Sobre Mim</h2>
-        <p>
-          Apaixonado por tecnologia, focado em criar experiências digitais
-          usando React e React Native. Em constante aprendizado e aprimoramento
-          para desenvolver soluções eficientes.
-        </p>
-        <div className="mt-4">
-          <Link href="/academic" className="text-blue-600 hover:underline">
-            Ver Formação Acadêmica
-          </Link>
+        {/* Texto com animação */}
+        <div className="w-full md:w-2/3 text-center">
+          <h1 className="text-5xl font-extrabold mb-6">Olá, eu sou Laura Jane Antunes</h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text-2xl mt-4"
+          >
+            {displayText}
+            <span className="animate-blink">|</span>
+          </motion.p>
+
+          {/* Resumo */}
+          <div className="p-8 max-w-4xl mx-auto">
+            <p className="text-lg leading-relaxed">
+              Apaixonada por tecnologia, focada em criar experiências digitais usando React e React Native.  
+              Estou em constante aprendizado para desenvolver soluções eficientes e inovadoras.
+            </p>
+
+            <div className="mt-6">
+              <Link href="/projects" className="text-blue-600 hover:underline text-xl">
+                Ver Projetos Principais
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Projetos */}
-      <section className="p-8 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6">Projetos</h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white p-6 rounded-2xl shadow-md"
-            >
-              <h3 className="text-2xl font-semibold">{project.title}</h3>
-              <p className="mt-2 mb-4">{project.description}</p>
-              <div className="flex gap-4">
-                <a
-                  href={project.demoLink}
-                  className="text-blue-600 hover:underline"
-                >
-                  Ver Projeto
-                </a>
-                <a
-                  href={project.codeLink}
-                  className="text-blue-600 hover:underline"
-                >
-                  Código Fonte
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contato */}
-      <footer className="p-8 bg-black text-white text-center">
-        <h2 className="text-3xl font-semibold mb-4">Contato</h2>
-        <div className="flex justify-center gap-8 text-3xl">
-          <a href="https://github.com/LauraJaneAntunes/" className="hover:text-gray-300">
-            <FaGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/laura-jane-antunes-904b1267/" className="hover:text-gray-300">
-            <FaLinkedin />
-          </a>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }

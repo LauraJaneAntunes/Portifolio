@@ -1,40 +1,103 @@
-'use client'
+'use client';
+
 import Link from "next/link";
+import Layout from '../components/layout';
+
+const academicData = [
+  {
+    icon: '💻',
+    title: 'Ensino Superior de Desenvolvimento de Software Multiplataforma',
+    institution: 'Fatec Votorantim',
+    period: '(Cursando - Conclusão em dez/2025)',
+    englishTitle: "Bachelor's in Multiplatform Software Development",
+    englishPeriod: '(Current)',
+    logo: '/images/fatec-logo.png',
+    site: 'https://fatecvotorantim.cps.sp.gov.br/'
+  },
+  {
+    icon: '🐾',
+    title: 'Ensino Técnico de Veterinária',
+    institution: 'Grupo Hamaida - pólo da Unifael Votorantim',
+    period: 'Conclusão 2022',
+    englishTitle: 'Veterinary Technical Degree',
+    englishPeriod: '2022',
+    logo: '/images/unifael-logo.png',
+    site: 'https://www.grupohamada.com/'
+  },
+  {
+    icon: '📚',
+    title: 'Ensino Técnico em Administração',
+    institution: 'IFSP Sorocaba',
+    period: 'Conclusão em 2018',
+    englishTitle: 'Technical Degree in Administration',
+    englishPeriod: '2018',
+    logo: '/images/ifsp-logo.png',
+    site: 'https://sor.ifsp.edu.br/'
+  },
+  {
+    icon: '🔬',
+    title: 'Ensino Superior em Ciências Biológicas',
+    institution: 'Ceunsp Itu',
+    period: '(Incompleto, 2009 - 2012)',
+    englishTitle: 'Bachelor’s in Biological Sciences (Incomplete)',
+    englishPeriod: '(2009 - 2012)',
+    logo: '/images/ceunsp-logo.png',
+    site: 'https://www.ceunsp.edu.br'
+  },
+  {
+    icon: '🏛',
+    title: 'Ensino Médio completo',
+    institution: 'ETEC Fernando Prestes',
+    period: 'Conclusão em 2006',
+    englishTitle: 'High School Diploma',
+    englishPeriod: '2006',
+    logo: '/images/etec-logo.png',
+    site: 'https://etecfernandoprestes.cps.sp.gov.br/'
+  }
+];
 
 export default function Academic() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      {/* Cabeçalho */}
-      <header className="p-6 bg-black text-white text-center">
-        <h1 className="text-4xl font-bold">Formação Acadêmica</h1>
-      </header>
+    <Layout>
+      <div className="min-h-screen bg-gray-100 text-gray-800">
+        {/* Cabeçalho */}
+        <header className="p-6 bg-black text-white text-center">
+          <h1 className="text-4xl font-bold">Formação Acadêmica</h1>
+        </header>
 
-      {/* Seção Acadêmica */}
-      <section className="p-8 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4">Educação</h2>
-        <ul className="list-disc pl-6">
-          <li>📌 Tecnólogo em Desenvolvimento de Software Multiplataforma - Fatec (Em andamento)</li>
-        </ul>
+        
+        <section className="p-8 max-w-4xl mx-auto">
+          <div className="grid gap-8">
+            {academicData.map((item, index) => (
+              <div key={index} className={`flex bg-white shadow-lg rounded-2xl overflow-hidden ${index === 0 ? 'border-4 border-black' : ''}`}>
+                <img src={item.logo} alt={item.institution} className="w-24 h-24 object-contain p-4" />
+                <div className="p-6 flex-1">
+                  <h3 className="text-xl font-semibold mb-2">{item.icon} {item.title}</h3>
+                  <p className="text-md text-gray-800 mb-1">{item.institution} - {item.period}</p>
+                  <p className="text-sm text-gray-600">{item.englishTitle} - {item.englishPeriod}</p>
+                  {item.site && (
+                    <a
+                      href={item.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline mt-2 block"
+                    >
+                      Visitar o site
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
 
-        <h2 className="text-3xl font-semibold mt-8 mb-4">Experiências Profissionais</h2>
-        <ul className="list-disc pl-6">
-          <li>📞 Telemarketing Receptivo</li>
-          <li>🛒 Reposição de Estoque</li>
-          <li>💳 Operação de Caixa e Crediário</li>
-          <li>🎯 Captação de Clientes</li>
-          <li>🐾 Auxiliar de Veterinário</li>
-          <li>📦 Gerenciamento e Entrega de Delivery</li>
-          <li>👨‍🍳 Auxiliar de Cozinha e Merenda</li>
-          <li>🚪 Vendas Porta a Porta</li>
-          <li>📅 Organização e Controle de Agenda de Médicos Veterinários</li>
-        </ul>
-
-{/*         <div className="mt-6">
-          <Link href="/" className="text-blue-600 hover:underline">
-            ← Voltar para a Página Inicial
-          </Link>
-        </div> */}
-      </section>
-    </div>
+          {/* Link de retorno */}
+          <div className="mt-12">
+            <Link href="/" className="text-blue-600 hover:underline">
+              ← Voltar para a Página Inicial
+            </Link>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 }
