@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import Layout from '../components/layout';
 
 export default function Professional() {
@@ -44,12 +43,6 @@ export default function Professional() {
               <p className="text-sm text-gray-600">Set 2012 - Dez 2014 / Sep 2012 - Dec 2014</p>
               <p className="mt-2">- Lorem ipsum dolor sit amet</p>
             </div>
-          </div>
-
-          <div className="mt-6">
-            <Link href="/" className="text-blue-600 hover:underline">
-              ← Voltar para a Página Inicial / Back to Home Page
-            </Link>
           </div>
         </section>
       </div>

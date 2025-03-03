@@ -3,12 +3,15 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const pathname = usePathname();
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header */}
@@ -25,6 +28,15 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main Content */}
       <main>{children}</main>
+
+      {/* Link de Retorno a Home */}
+      {pathname !== "/" && (
+        <div className="mt-6 flex justify-center">
+            <Link href="/" className="text-blue-600 hover:underline">
+              ← Voltar para a Página Inicial / Back to Home Page
+            </Link>
+        </div>
+      )}
 
       {/* Links de Contato */}
       <div className="flex justify-center gap-8 text-3xl my-8">

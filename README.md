@@ -45,11 +45,8 @@ Feito com 💙 por **Laura Jane Antunes**
 ## 🛠️ Próximos Passos
 
 - Modificar animações e cores
-- Jogar o link "voltar a página inicial" no layout.tsx
 - Terminar de desenvolver a página Sobre
 - Terminar de desenvolver a página Professional
 - Adicionar as imagens dos logos em Acadêmico
-- Adicionar espaço e as imagens de miniaturas (thumbnail) em Projetos
-- Adicionar link direto dos repositórios do GitHub em Projetos
 - Adicionar seção de formulário para envio de e-mail e ícone nos links de contato
 - Adicionar funcionalidade de tradução inglês/português BR (última coisa a se fazer)
