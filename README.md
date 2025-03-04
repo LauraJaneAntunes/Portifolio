@@ -49,4 +49,4 @@ Feito com 💙 por **Laura Jane Antunes**
 - Terminar de desenvolver a página Professional
 - Adicionar as imagens dos logos em Acadêmico
 - Adicionar seção de formulário para envio de e-mail e ícone nos links de contato
-- Adicionar funcionalidade de tradução inglês/português BR (última coisa a se fazer)
+- Adicionar funcionalidade de tradução inglês/português BR (última coisa a se fazer) i18n
