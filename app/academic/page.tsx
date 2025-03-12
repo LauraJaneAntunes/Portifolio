@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import Layout from '../components/layout';
 
 const academicData = [
@@ -88,14 +87,7 @@ export default function Academic() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Link de retorno */}
-          <div className="mt-12">
-            <Link href="/" className="text-blue-600 hover:underline">
-              ← Voltar para a Página Inicial
-            </Link>
-          </div>
+          </div>        
         </section>
       </div>
     </Layout>
