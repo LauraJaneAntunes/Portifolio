@@ -16,13 +16,17 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header */}
       <header className="p-6 bg-black text-white flex items-center justify-between">
-        <div className="text-4xl font-bold">LJA</div>
+        <div className="text-4xl font-bold">
+          <span className="text-blueviolet">L</span>
+          <span className="text-blueviolet">J</span>
+          <span>A</span>
+        </div>
         <nav className="flex gap-6">
-          <Link href="/" className="hover:underline">Home</Link>
-          <Link href="/projects" className="hover:underline">Projetos</Link>
-          <Link href="/academic" className="hover:underline">Acadêmico</Link>
-          <Link href="/professional" className="hover:underline">Profissional</Link>
-          <Link href="/about" className="hover:underline">Sobre</Link>
+          <Link href="/" className="animated-underline">Home</Link>
+          <Link href="/projects" className="animated-underline">Projetos</Link>
+          <Link href="/academic" className="animated-underline">Acadêmico</Link>
+          <Link href="/professional" className="animated-underline">Profissional</Link>
+          <Link href="/about" className="animated-underline">Sobre</Link>
         </nav>
       </header>
 

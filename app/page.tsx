@@ -80,10 +80,13 @@ export default function Home() {
               </p>
 
               <div className="mt-6">
-                <Link href="/projects" className="text-blue-600 hover:underline text-xl">
-                  Ver Projetos Principais
-                </Link>
-              </div>
+            <Link 
+              href="/projects" 
+    className="text-[#00FFFF] text-xl transition-all duration-300 hover:drop-shadow-[0_0_8px_#ffffff]"
+              >
+              Ver Projetos Principais
+            </Link>
+          </div>
             </div>
           </div>
         </section>
