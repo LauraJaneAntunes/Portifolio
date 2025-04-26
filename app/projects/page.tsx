@@ -7,10 +7,16 @@ export default function Projects() {
   const [projects] = useState([
     {
       title: "Landing Page",
-      description: "Aplicação em HTML + CSS + JavaScript para o projeto de Iniciação Científica da Fatec de Votorantim - 2 e 3º semestre (2022 / 2023).",
+      description: "Projeto desenvolvido para Iniciação Científica da Fatec de Votorantim - 2 e 3º semestre (2022 / 2023).",
       demoLink: "https://ljainiciacaocientifica.netlify.app/",
       codeLink: "https://github.com/LauraJaneAntunes/IC",
       thumbnail: "/images/ic.png",
+      technologies: [
+        { name: "HTML", icon: "/icons/html5.svg" },
+        { name: "CSS", icon: "/icons/css.svg" },
+        { name: "JavaScript", icon: "/icons/javascript.svg" }
+      ],
+      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
     },
     {
       title: "Eventos Express",
@@ -18,6 +24,12 @@ export default function Projects() {
       demoLink: "https://eventos-express.netlify.app/",
       codeLink: "https://github.com/Evento-Express/Plataforma-Eventos-Express",
       thumbnail: "/images/eventos-express.png",
+      technologies: [
+        { name: "HTML", icon: "/icons/html5.svg" },
+        { name: "CSS", icon: "/icons/css.svg" },
+        { name: "JavaScript", icon: "/icons/javascript.svg" }
+      ],      
+      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
     },
     {
       title: "Plataforma Ecosrev",
@@ -25,6 +37,12 @@ export default function Projects() {
       demoLink: "https://ecos-rev-pi.vercel.app/",
       codeLink: "https://github.com/LauraJaneAntunes/EcosRev-PI4sem",
       thumbnail: "/images/web-ecosrev.png",
+      technologies: [
+        { name: "HTML", icon: "/icons/html5.svg" },
+        { name: "CSS", icon: "/icons/css.svg" },
+        { name: "JavaScript", icon: "/icons/javascript.svg" },
+      ],
+      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
     },
     {
       title: "App Mobile Ecosrev",
@@ -32,6 +50,12 @@ export default function Projects() {
       demoLink: "https://lpappmobileecosrev.netlify.app/",
       codeLink: "https://github.com/LauraJaneAntunes/appMobile",
       thumbnail: "/images/mobile-ecosrev.png",
+      technologies: [
+        { name: "HTML", icon: "/icons/html5.svg" },
+        { name: "CSS", icon: "/icons/css.svg" },
+        { name: "JavaScript", icon: "/icons/javascript.svg" },
+      ],
+      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
     },
   ]);
 
@@ -46,9 +70,11 @@ export default function Projects() {
         {/* Introdução */}
         <div className="p-6 text-center max-w-3xl mx-auto">
           <p className="text-lg leading-relaxed">
-            Estes são os principais projetos em que participei. <br /> Na maioria dos casos, desenvolvi em grupo,
-            exceto o da Iniciação Científica, em que trabalhei sozinha. <br />
-            Se quiser ver os demais projetos, acesse: &nbsp; 
+            Estes são os principais projetos em que participei. <br /> 
+            A maioria foi desenvolvida em grupo, exceto o projeto da Iniciação Científica, que realizei individualmente. <br />
+            Abaixo, apresento uma breve descrição de cada projeto, as ferramentas tecnológicas utilizadas, imagens, links para repositórios e uma reflexão sobre conhecimentos adiquiridos. <br />
+            
+            Para visualizar meus demais projetos, acesse: &nbsp; 
             <a 
               href="https://github.com/LauraJaneAntunes?tab=repositories" 
               className="text-blue-600 hover:underline" 
@@ -75,7 +101,20 @@ export default function Projects() {
                 />
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
                 <p className="mt-2 mb-4">{project.description}</p>
-                <div className="flex gap-4">
+                {/* Tecnologias */}
+                <div className="flex flex-wrap gap-3 mt-4">
+                  {project.technologies.map((tech, idx) => (
+                    <div key={idx} className="flex items-center gap-2 bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">
+                      <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
+                      <span>{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Reflexão */}
+                <p className="mt-4 text-sm italic text-gray-600">
+                  {project.reflection}
+                </p>
+                <div className="flex gap-4 mt-6">
                   <a
                     href={project.demoLink}
                     className="text-blue-600 hover:underline"

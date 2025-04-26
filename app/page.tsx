@@ -75,8 +75,8 @@ export default function Home() {
             {/* Resumo */}
             <div className="p-8 max-w-4xl mx-auto">
               <p className="text-lg leading-relaxed">
-                Apaixonada por tecnologia, focada em criar experiências digitais usando React e React Native.  
-                Estou em constante aprendizado para desenvolver soluções eficientes e inovadoras.
+                Sou apaixonada por tecnologia, focada em criar experiências digitais usando React e React Native.  
+                Estou em constante aprendizado para desenvolver soluções inovadoras e eficientes.
               </p>
 
               <div className="mt-6">
