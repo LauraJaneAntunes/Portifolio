@@ -27,6 +27,7 @@ export default function Layout({ children }: LayoutProps) {
           <Link href="/academic" className="animated-underline">Acadêmico</Link>
           <Link href="/professional" className="animated-underline">Profissional</Link>
           <Link href="/about" className="animated-underline">Sobre</Link>
+          <Link href="/contact" className="seus-estilos-aqui">Contato</Link>
         </nav>
       </header>
 
