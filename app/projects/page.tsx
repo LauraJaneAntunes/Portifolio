@@ -6,59 +6,65 @@ import Layout from '../components/layout';
 export default function Projects() {
   const [projects] = useState([
     {
-      title: "Landing Page",
-      description: "Projeto desenvolvido para Iniciação Científica da Fatec de Votorantim - 2 e 3º semestre (2022 / 2023).",
+      title: "Iniciação Científica",
+      description: "Landing Page desenvolvido para a minha Iniciação Científica da Fatec de Votorantim - 2 e 3º semestre (2022 / 2023).",
       demoLink: "https://ljainiciacaocientifica.netlify.app/",
       codeLink: "https://github.com/LauraJaneAntunes/IC",
       thumbnail: "/images/ic.png",
       technologies: [
         { name: "HTML", icon: "/icons/html5.svg" },
         { name: "CSS", icon: "/icons/css.svg" },
-        { name: "JavaScript", icon: "/icons/javascript.svg" }
       ],
-      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
+      reflection: "Este projeto foi desenvolvido com o objetivo de criar uma página simples para exibir o meu trabalho de Iniciação Científica no lugar de uma apresentação formal. Essa experiência me proporcionou um melhor entendimento da estrutura de páginas estásticas e aprofundou meu domínio em HTML e CSS.",
     },
-    {
+      {
       title: "Eventos Express",
       description: "Front-End do Projeto desenvolvido para estágio em parceria com o curso de Eventos da Fatec de Itu - 2 e 3º semestre (2022 / 2023).",
       demoLink: "https://eventos-express.netlify.app/",
       codeLink: "https://github.com/Evento-Express/Plataforma-Eventos-Express",
       thumbnail: "/images/eventos-express.png",
       technologies: [
+        { name: "Figma", icon: "/icons/figma.svg" },
         { name: "HTML", icon: "/icons/html5.svg" },
         { name: "CSS", icon: "/icons/css.svg" },
-        { name: "JavaScript", icon: "/icons/javascript.svg" }
+        { name: "JavaScript", icon: "/icons/javascript.svg" },
+        { name: "Bootstrap", icon: "/icons/bootstrap.svg" }
       ],      
-      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
+      reflection: "Este projeto foi desenvolvido para o meu estágio. O objetivo foi desenvolver o front-end de uma plataforma para facilitar a contratação de eventos. Trabalhei em colaboração com uma colega, fortalecendo minhas habilidades em criação de páginas responsivas e práticas de desenvolvimento colaborativo. ",
     },
     {
       title: "Plataforma Ecosrev",
-      description: "Front-End do Projeto em desenvolvido em React/Next, Banco de Dados em Mongo para o Projeto Integrador - 4º semestre (2024).",
+      description: "Projeto full-stack desenvolvido como parte do Projeto Integrador do 4º semestre (2024).",
       demoLink: "https://ecos-rev-pi.vercel.app/",
       codeLink: "https://github.com/LauraJaneAntunes/EcosRev-PI4sem",
       thumbnail: "/images/web-ecosrev.png",
       technologies: [
-        { name: "HTML", icon: "/icons/html5.svg" },
-        { name: "CSS", icon: "/icons/css.svg" },
-        { name: "JavaScript", icon: "/icons/javascript.svg" },
+        { name: "Figma", icon: "/icons/figma.svg" },
+        { name: "TypeScript", icon: "/icons/typescript.svg" },
+        { name: "React", icon: "/icons/react.svg" },
+        { name: "Next.js", icon: "/icons/nextdotjs.svg" },
+        { name: "Node.js", icon: "/icons/nodedotjs.svg" },
+        { name: "Express", icon: "/icons/express.svg" },
+        { name: "MongoDB", icon: "/icons/mongodb.svg" },
+        { name: "Swagger", icon: "/icons/swagger.svg" },
+        { name: "Jest", icon: "/icons/jest.svg" },
       ],
-      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
+      reflection: "Este projeto foi desenvolvido em grupo, com o objetivo de criar uma plataforma que promove o descarte correto de resíduos eletroeletrônicos, oferecendo recompensas. Eu fui responsável pelo desenvolvimento do front-end, utilizando React e Next.js. Essa experiência consolidou meus conhecimentos nessas tecnologias e me proporcionou uma visão mais ampla sobre a construção de aplicações full-stack."
     },
     {
       title: "App Mobile Ecosrev",
-      description: "Front-End do Projeto em desenvolvimento para o Projeto Integrador -  [ATUAL] 5º semestre de 2025.",
+      description: "Landing Page do Projeto em desenvolvimento do aplicativo mobile para o Projeto Integrador -  [ATUAL] 5º semestre de 2025.",
       demoLink: "https://lpappmobileecosrev.netlify.app/",
-      codeLink: "https://github.com/LauraJaneAntunes/appMobile",
+      codeLink: "https://github.com/LauraJaneAntunes/LPAppMobile",
       thumbnail: "/images/mobile-ecosrev.png",
       technologies: [
-        { name: "HTML", icon: "/icons/html5.svg" },
-        { name: "CSS", icon: "/icons/css.svg" },
-        { name: "JavaScript", icon: "/icons/javascript.svg" },
+        { name: "React", icon: "/icons/react.svg" },
+        { name: "Next.js", icon: "/icons/nextdotjs.svg" }
       ],
-      reflection: "Aprendi sobre estrutura de páginas estáticas e melhorei meu domínio de HTML/CSS."
+      reflection: "Este projeto foi desenvolvido com o objetivo de promover o aplicativo em desenvolvimento para incentivar o descarte correto de resíduos eletroeletrônicos. Essa experiência me permitiu aprimorar minhas habilidades em React e Next.js, além de reforçar a importância de uma boa apresentação para um produto digital."
     },
   ]);
-
+  // Ícones de https://simpleicons.org/
   return (
     <Layout>
       <div className="min-h-screen bg-gray-100 text-gray-800">
@@ -70,8 +76,7 @@ export default function Projects() {
         {/* Introdução */}
         <div className="p-6 text-center max-w-3xl mx-auto">
           <p className="text-lg leading-relaxed">
-            Estes são os principais projetos em que participei. <br /> 
-            A maioria foi desenvolvida em grupo, exceto o projeto da Iniciação Científica, que realizei individualmente. <br />
+            Estes são alguns dos projetos em que participei. <br /> 
             Abaixo, apresento uma breve descrição de cada projeto, as ferramentas tecnológicas utilizadas, imagens, links para repositórios e uma reflexão sobre conhecimentos adiquiridos. <br />
             
             Para visualizar meus demais projetos, acesse: &nbsp; 
@@ -97,7 +102,7 @@ export default function Projects() {
                 <img
                   src={project.thumbnail}
                   alt={`Thumbnail do projeto ${project.title}`}
-                  className="w-full h-40 object-cover rounded-xl mb-4"
+                  className="w-full h-40 object-cover rounded-xl mb-4 border-4 border-blueviolet"
                 />
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
                 <p className="mt-2 mb-4">{project.description}</p>
