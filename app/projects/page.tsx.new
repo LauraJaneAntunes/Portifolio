@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from '../components/layout';
 import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaLaptopCode } from "react-icons/fa";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -70,7 +70,20 @@ export default function Projects() {
       reflection: "Este projeto foi desenvolvido com o objetivo de promover o aplicativo em desenvolvimento para incentivar o descarte correto de resíduos eletroeletrônicos. Essa experiência me permitiu aprimorar minhas habilidades em React e Next.js, além de reforçar a importância de uma boa apresentação para um produto digital.",
       category: "web"
     },
-    
+    {
+      title: "Hedgehog Builder",
+      description: "Projeto lúdico criado para praticar HTML, CSS e JavaScript.",
+      demoLink: "https://laurajaneantunes.github.io/Hedgehog-Builder/",
+      codeLink: "https://github.com/LauraJaneAntunes/Hedgehog-Builder",
+      thumbnail: "/images/hedgehog-builder.png",
+      technologies: [
+        { name: "HTML", icon: "/icons/html5.svg" },
+        { name: "CSS", icon: "/icons/css.svg" },
+        { name: "JavaScript", icon: "/icons/javascript.svg" }
+      ],
+      reflection: "Este projeto lúdico foi desenvolvido para praticar interatividade com JavaScript. Permite construir personagens de ouriços com diferentes combinações de características. Foi uma experiência divertida que me ajudou a consolidar conhecimentos de manipulação do DOM e lógica de programação.",
+      category: "web"
+    }
   ]);
 
   const filteredProjects = activeFilter === 'all' 

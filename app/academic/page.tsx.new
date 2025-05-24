@@ -1,0 +1,288 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Layout from '../components/layout';
+import { FaUniversity, FaExternalLinkAlt, FaGraduationCap, FaUserGraduate } from 'react-icons/fa';
+import Image from 'next/image';
+
+const academicData = [
+  {
+    icon: <FaGraduationCap className="text-primary" />,
+    title: 'Ensino Superior de Desenvolvimento de Software Multiplataforma',
+    institution: 'Fatec Votorantim',
+    period: 'Cursando - Conclusão em dez/2025',
+    englishTitle: "Bachelor's in Multiplatform Software Development",
+    englishPeriod: 'Current',
+    logo: '/images/logo-fatec.png',
+    site: 'https://fatecvotorantim.cps.sp.gov.br/',
+    description: 'Curso focado no desenvolvimento de software para diferentes plataformas, incluindo aplicações web, mobile e desktop, utilizando tecnologias modernas como React, Node.js, e desenvolvimento em nuvem.',
+    highlight: true,
+    skills: ['Desenvolvimento Web', 'Programação Mobile', 'Banco de Dados', 'Desenvolvimento Full-Stack', 'DevOps', 'UX/UI']
+  },
+  {
+    icon: <FaUserGraduate className="text-primary" />,
+    title: 'Ensino Técnico de Veterinária',
+    institution: 'Grupo Hamaida - pólo da Unifael Votorantim',
+    period: 'Conclusão 2022',
+    englishTitle: 'Veterinary Technical Degree',
+    englishPeriod: '2022',
+    logo: '/images/logo-hamada.avif',
+    site: 'https://www.grupohamada.com/',
+    description: 'Formação técnica em veterinária, com foco em cuidados com animais, procedimentos clínicos básicos e gestão de clínicas veterinárias.',
+    highlight: false,
+    skills: ['Cuidados Veterinários', 'Primeiros Socorros', 'Gestão de Clínicas']
+  },
+  {
+    icon: <FaUniversity className="text-primary" />,
+    title: 'Ensino Técnico em Administração',
+    institution: 'IFSP Sorocaba',
+    period: 'Conclusão em 2018',
+    englishTitle: 'Technical Degree in Administration',
+    englishPeriod: '2018',
+    logo: '/images/logo-ifsp.png',
+    site: 'https://sor.ifsp.edu.br/',
+    description: 'Curso técnico em administração com ênfase em gestão de negócios, empreendedorismo e organização empresarial.',
+    highlight: false,
+    skills: ['Gestão de Negócios', 'Empreendedorismo', 'Organização Empresarial']
+  },
+  {
+    icon: <FaUserGraduate className="text-primary" />,
+    title: 'Ensino Superior em Ciências Biológicas',
+    institution: 'Ceunsp Itu',
+    period: 'Incompleto, 2009 - 2012',
+    englishTitle: 'Bachelor's in Biological Sciences (Incomplete)',
+    englishPeriod: '2009 - 2012',
+    logo: '/images/logo-ceunsp.png',
+    site: 'https://www.ceunsp.edu.br',
+    description: 'Curso de graduação em Ciências Biológicas, com estudos em biologia, ecologia, zoologia e botânica.',
+    highlight: false,
+    skills: ['Biologia', 'Ecologia', 'Zoologia', 'Botânica']
+  },
+  {
+    icon: <FaGraduationCap className="text-primary" />,
+    title: 'Ensino Médio completo',
+    institution: 'ETEC Fernando Prestes',
+    period: 'Conclusão em 2006',
+    englishTitle: 'High School Diploma',
+    englishPeriod: '2006',
+    logo: '/images/logo-etec.png',
+    site: 'https://etecfernandoprestes.cps.sp.gov.br/',
+    description: 'Ensino médio completo, com formação básica em ciências, matemática, linguagens e humanidades.',
+    highlight: false,
+    skills: ['Formação Geral', 'Base Educacional']
+  }
+];
+
+export default function Academic() {
+  // Variantes de animação para os elementos
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({ 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        delay: i * 0.1
+      }
+    })
+  };
+
+  return (
+    <Layout>
+      <div className="min-h-screen">
+        {/* Cabeçalho */}
+        <motion.header 
+          className="pt-8 pb-4 text-center px-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+            Formação Acadêmica
+          </h1>
+          <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto">
+            Minha jornada de aprendizado e qualificações
+          </p>
+        </motion.header>
+
+        {/* Introdução */}
+        <motion.div 
+          className="px-6 text-center max-w-3xl mx-auto mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <p className="text-lg leading-relaxed opacity-90">
+            Conheça minha trajetória acadêmica, desde o ensino médio até minha formação atual em Desenvolvimento de Software Multiplataforma.
+            Cada etapa contribuiu para o desenvolvimento de habilidades complementares que utilizo na minha carreira.
+          </p>
+        </motion.div>
+
+        {/* Formação em Destaque */}
+        {academicData.filter(item => item.highlight).map((item, index) => (
+          <motion.section 
+            key={index}
+            className="px-4 pb-8 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="glass-card p-6 md:p-8 overflow-hidden">
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="relative w-full md:w-1/3 h-48 md:h-64 flex-shrink-0 overflow-hidden rounded-lg">
+                  <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center p-4">
+                    <Image 
+                      src={item.logo} 
+                      alt={item.institution} 
+                      width={200}
+                      height={100}
+                      className="object-contain" 
+                    />
+                  </div>
+                </div>
+                
+                <div className="md:w-2/3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="text-2xl">{item.icon}</div>
+                    <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+                      {item.title}
+                    </h2>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <p className="text-lg font-medium">{item.institution}</p>
+                    <p className="opacity-80">
+                      <span className="bg-primary/20 text-primary-light px-3 py-1 rounded-full text-sm">
+                        {item.period}
+                      </span>
+                      <span className="ml-2 text-sm opacity-70">{item.englishTitle} ({item.englishPeriod})</span>
+                    </p>
+                  </div>
+                  
+                  <p className="mb-4 opacity-90">{item.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {item.skills.map((skill, i) => (
+                      <span key={i} className="bg-white/10 px-3 py-1 rounded-full text-sm">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <motion.a
+                    href={item.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaExternalLinkAlt className="text-xs" />
+                    <span>Visitar website da instituição</span>
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+        ))}
+
+        {/* Lista de Formações */}
+        <section className="px-4 pb-12 max-w-4xl mx-auto">
+          <motion.h3 
+            className="text-2xl font-bold mb-6 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Formações Adicionais
+          </motion.h3>
+          
+          <div className="grid gap-6">
+            {academicData.filter(item => !item.highlight).map((item, index) => (
+              <motion.div 
+                key={index}
+                className="glass-card overflow-hidden"
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex flex-col sm:flex-row">
+                  <div className="w-full sm:w-1/4 bg-white/80 p-4 flex items-center justify-center">
+                    <Image 
+                      src={item.logo} 
+                      alt={item.institution} 
+                      width={120}
+                      height={80}
+                      className="object-contain" 
+                    />
+                  </div>
+                  
+                  <div className="p-6 flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="text-xl">{item.icon}</div>
+                      <h3 className="text-xl font-semibold">{item.title}</h3>
+                    </div>
+                    
+                    <p className="mb-1">
+                      {item.institution} - <span className="opacity-80">{item.period}</span>
+                    </p>
+                    <p className="text-sm opacity-70 mb-3">{item.englishTitle} ({item.englishPeriod})</p>
+                    
+                    <p className="text-sm opacity-90 mb-3">{item.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {item.skills.slice(0, 3).map((skill, i) => (
+                        <span key={i} className="bg-white/10 px-2 py-0.5 rounded-full text-xs">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <motion.a
+                      href={item.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                      whileHover={{ x: 3 }}
+                    >
+                      <FaExternalLinkAlt className="text-xs" />
+                      <span>Visitar site</span>
+                    </motion.a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>        
+        </section>
+        
+        {/* Seção de contato/call to action */}
+        <motion.div 
+          className="glass-card p-8 text-center max-w-3xl mx-auto mb-16 overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+            Formação Contínua
+          </h2>
+          <p className="opacity-90 mb-6">
+            Além da educação formal, estou sempre me atualizando com cursos online e certificações em tecnologias emergentes.
+            Acredito que o aprendizado contínuo é essencial para se manter relevante na área de desenvolvimento.
+          </p>
+          <motion.a
+            href="/contact"
+            className="btn-modern inline-flex items-center gap-2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaUniversity className="text-sm" />
+            <span>Entre em contato</span>
+          </motion.a>
+        </motion.div>
+      </div>
+    </Layout>
+  );
+}

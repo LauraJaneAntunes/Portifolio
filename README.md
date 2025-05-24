@@ -47,5 +47,4 @@ Feito com 💙 por **Laura Jane Antunes**
 - Modificar animações e cores
 - Terminar de desenvolver a página Sobre
 - Terminar de desenvolver a página Professional
-  Adicionar a opção de download do currículo
-- Adicionar funcionalidade de tradução inglês/português BR (última coisa a se fazer) i18n
+  Adicionar funcionalidade de tradução inglês/português BR (última coisa a se fazer) i18n
