@@ -115,7 +115,7 @@ export default function About() {
                                             Estou sempre em busca de novos desafios e oportunidades para aplicar e expandir meus conhecimentos.
                                         </p>
                                         <p className="text-lg leading-relaxed opacity-90">
-                                            Posso me comunicar em português nativo e inglês avançado, facilitando colaborações internacionais 
+                                            Posso me comunicar em português nativo e inglês, facilitando colaborações internacionais 
                                             e o trabalho com equipes multiculturais.
                                         </p>
                                     </div>
@@ -285,7 +285,7 @@ export default function About() {
                                         <motion.div 
                                             className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
                                             initial={{ width: 0 }}
-                                            whileInView={{ width: "85%" }}
+                                            whileInView={{ width: "75%" }}
                                             transition={{ duration: 1, delay: 0.1 }}
                                             viewport={{ once: true }}
                                         />
