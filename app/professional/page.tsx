@@ -7,62 +7,99 @@ import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaDownload, FaBuilding, FaG
 export default function Professional() {
   // Array com as experiências profissionais
   const experiences = [
-    {
-      title: "Operador de Telemarketing Receptivo",
-      company: "Fidelity Services",
-      location: "Itu, Brasil",
-      period: "Fev 2009 - Ago 2012",
-      description: [
-        "Prestava atendimento ao cliente por meio de chamadas receptivas, resolvendo questões de forma eficiente.",
-        "Treinei novos membros da equipe para melhorar a qualidade do serviço e a eficiência operacional."
-      ],
-      icon: "📞"
-    },
-    {
-      title: "Repositor de Estoque",
-      company: "Supermercado Local",
-      location: "Itu, Brasil",
-      period: "Set 2012 - Dez 2014",
-      description: [
-        "Responsável pelo controle e reposição de produtos nas prateleiras.",
-        "Organização do estoque e verificação de validade de produtos."
-      ],
-      icon: "🛒"
-    },
-    {
-      title: "Operador de Caixa e Crediário",
-      company: "Loja de Departamento",
-      location: "Itu, Brasil",
-      period: "Jan 2015 - Mar 2017",
-      description: [
-        "Atendimento ao cliente e operação de caixa.",
-        "Análise e aprovação de crediário para clientes."
-      ],
-      icon: "💳"
-    },
-    {
-      title: "Auxiliar de Veterinário",
-      company: "Clínica Veterinária",
-      location: "Itu, Brasil",
-      period: "Mar 2017 - Dez 2019",
-      description: [
-        "Auxílio em procedimentos veterinários.",
-        "Organização e controle de agenda de médicos veterinários."
-      ],
-      icon: "🐾"
-    },
-    {
-      title: "Especialista em Captação de Clientes",
-      company: "Empresa de Marketing",
-      location: "Itu, Brasil",
-      period: "Jan 2020 - Dez 2021",
-      description: [
-        "Estratégias de captação de novos clientes.",
-        "Vendas porta a porta e apresentação de produtos/serviços."
-      ],
-      icon: "🎯"
-    }
-  ];
+  {
+    title: "Recepcionista e Auxiliar Financeiro",
+    company: "Culturetec (Familiar - sem registro)",
+    location: "Sorocaba, Brasil",
+    period: "Out 2007 - Mar 2009",
+    description: [
+      "Atendimento presencial e telefônico.",
+      "Auxílio nas rotinas administrativas e financeiras."
+    ],
+    icon: "🏢"
+  },
+  {
+    title: "Operadora de Atendimento",
+    company: "Fidelity Processadora e Serviços",
+    location: "Itu, Brasil",
+    period: "Mai 2009 - Nov 2012",
+    description: [
+      "Atendimento (passivo) ao cliente via telefone, oferecendo suporte e resolução de problemas.",
+      "Foco em metas de vendas de seguro."
+    ],
+    icon: "📞"
+  },
+  {
+    title: "Operadora de Caixa e Atendimento",
+    company: "Lojas Avenida",
+    location: "Sorocaba, Brasil",
+    period: "Ago 2013 - Abr 2015",
+    description: [
+      "Operação de caixa, abertura e fechamento de caixa. Oferta de serviços como: seguros, convênio odontológico e financeiros.",
+      "Atendimento ao cliente,  e assessoramento no setor infantil.",
+      "Captação externa de clientes antes da inauguração da loja para emissão de cartão.",
+      "Análise e aprovação de crediário.",
+      "Atuação desde a inauguração até o encerramento da loja."
+    ],
+    icon: "💳"
+  },
+  {
+    title: "Operadora de Caixa (Temporário)",
+    company: "Maison Bertin",
+    location: "Sorocaba, Brasil",
+    period: "Out 2015 - Jan 2016",
+    description: [
+      "Operação de caixa e atendimento ao cliente.",
+      "Auxílio nas rotinas de loja durante período sazonal."
+    ],
+    icon: "🛍️"
+  },
+  {
+    title: "Auxiliar de Cozinha e Operadora de Caixa (Horista)",
+    company: "Restaurante Container FIT",
+    location: "Sorocaba, Brasil",
+    period: "Mar 2017 - Set 2018 | Mar 2019 - Jun 2019",
+    description: [
+      "Gerenciamento do setor de delivery",
+      "Preparação de alimentos, organização da cozinha e atendimento no caixa.",
+      "Controle de pedidos e apoio geral no restaurante."
+    ],
+    icon: "🍽️"
+  },
+  {
+    title: "Auxiliar de Cozinha e Merendeira (Temporário)",
+    company: "Restaurante Juriti",
+    location: "Sorocaba, Brasil",
+    period: "Out 2019 - Dez 2019",
+    description: [
+      "Auxílio na preparação de alimentos e organização da cozinha.",
+      "Atendimento na linha de montagem e serviço de merenda."
+    ],
+    icon: "🥗"
+  },
+  {
+    title: "Recepcionista",
+    company: "AcumedVet",
+    location: "Sorocaba, Brasil",
+    period: "Set 2020 - Mar 2021",
+    description: [
+      "Atendimento presencial e telefônico aos clientes da clínica veterinária.",
+      "Agendamento de consultas e organização administrativa da recepção."
+    ],
+    icon: "🐾"
+  },
+  {
+    title: "Estagiária de Auxiliar Veterinária",
+    company: "Clínica Veterinária Quatro Patas",
+    location: "Votorantim, Brasil",
+    period: "Nov 2022 - Dez 2022",
+    description: [
+      "Auxílio nos cuidados com os animais, higienização, organização dos ambientes e apoio em procedimentos simples.",
+      "Apoio aos médicos veterinários e atendimento aos tutores dos pets."
+    ],
+    icon: "🐶"
+  }
+];
 
   // Array com as habilidades profissionais
   const skills = [
