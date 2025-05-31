@@ -388,47 +388,7 @@ export default function About() {
                                 </ul>
                             </motion.div>
                         </div>
-                    </div>
-                </motion.section>
-
-                {/* Interesses e Hobbies */}
-                <motion.section 
-                    className="py-8 px-4 max-w-6xl mx-auto mb-16"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="glass-card p-8">
-                        <h3 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text text-center">
-                            Interesses e Hobbies
-                        </h3>
-                        
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
-                            {[
-                                { name: 'Programação', icon: '💻' },
-                                { name: 'Leitura', icon: '📚' },
-                                { name: 'Música', icon: '🎵' },
-                                { name: 'Design', icon: '🎨' },
-                                { name: 'Filmes', icon: '🎬' },
-                                { name: 'Viagens', icon: '✈️' }
-                            ].map((hobby, idx) => (
-                                <motion.div
-                                    key={hobby.name}
-                                    className="p-4 bg-white/10 rounded-lg flex flex-col items-center"
-                                    whileHover={{ y: -5 }}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
-                                    viewport={{ once: true }}
-                                >
-                                    <span className="text-3xl mb-2">{hobby.icon}</span>
-                                    <span>{hobby.name}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </motion.section>
+                    </div>                </motion.section>
             </div>
         </Layout>
     )

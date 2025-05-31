@@ -56,7 +56,7 @@ const academicData = [
 	},
 	{
 		icon: '🏛',
-		title: 'Ensino Médio completo',
+		title: 'Ensino Médio Técnico',
 		institution: 'ETEC Fernando Prestes',
 		period: 'Conclusão em 2006',
 		englishTitle: 'High School Diploma',
@@ -64,7 +64,7 @@ const academicData = [
 		logo: '/images/logo-etec.png',
 		site: 'https://etecfernandoprestes.cps.sp.gov.br/',
 		current: false,
-		description: 'Ensino médio regular com foco em preparação para o vestibular e mercado de trabalho.'
+		description: 'Ensino médio com adição de matérias técnicas como: Língua Estrangeira Moderna (Inglês), Serviços de Informação e Comunicação, Projetos Técnico-Científicos, Ações de Cidadania e Intervenções Ambientais.'
 	}
 ];
 
